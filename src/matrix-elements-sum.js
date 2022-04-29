@@ -46,6 +46,8 @@ for(let i =0;i<size_max;i++){
 for(let i =0;i<arr.length;i++){
     result += arr[i];
 }
+return result;
+}
 
 module.exports = {
   getMatrixElementsSum
