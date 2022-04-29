@@ -26,7 +26,9 @@ function getSumOfDigits(n) {
     if (arr.length > 1){
          return getSumOfDigits(sum);
     }
+     else {
      return sum;
+}
 }
 
 module.exports = {
