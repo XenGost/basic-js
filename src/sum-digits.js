@@ -15,6 +15,9 @@ const { NotImplementedError } = require('../extensions/index.js');
 function getSumOfDigits(n) {
       let array =Array.from(n.toString(), Number);
     let sum =  0;
+          if (array.length == 1){
+        sum =sum + array[0];
+    }
     if (array.length > 1){
          for (let i=0; i< array.length; i++){
              sum =sum + array[i];
