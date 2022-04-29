@@ -27,19 +27,10 @@ let arr=[].concat(array);
 let size_max = array.length;
 let a= size_max/size;
 for(let i =0;i<size_max;i++){
-    for(let j=i;j<i+a;j++){
-        if (array[j] == 0){
-            if (j<a){
-                arr.splice(j, 1);
-                arr.splice(j+size, 1);
-                arr.splice(j+2*size, 1);}
-                else if (j<2*a){
-                arr.splice(j, 1);
-                arr.splice(j+size, 1);
-                }
-                else if (j<3*a){
-                arr.splice(j, 1);
-                }
+        if (array[i] == 0){
+            for(let n=i; n<size_max;n=n+a){
+                arr[n]=0;
+                //arr.splice(n,1)
             }
     }
 }
