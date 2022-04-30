@@ -26,9 +26,7 @@ function transform(array) {
         if(index!=array.length-1){
         transform_array.splice(index, 2);
         }
-        else{
-          transform_array.splice(index, 1);  
-        }
+        
     }
     if (array.includes('--discard-prev',0)){
         
@@ -36,9 +34,7 @@ function transform(array) {
         if(index!=0){
         transform_array.splice(index-1, 2);
         }
-        else{
-          transform_array.splice(index, 1);  
-        }
+        
     }
     if (array.includes('--double-next',0)){
         
@@ -46,9 +42,7 @@ function transform(array) {
         if(index!=array.length-1){
         transform_array[index]=array[index+1];
         }
-        else{
-          transform_array.splice(index, 1);  
-        }
+        
     }
     if (array.includes('--double-prev',0)){
          
@@ -56,9 +50,7 @@ function transform(array) {
         if(index!=0){
         transform_array[index]=array[index-1];
          }
-         else{
-          transform_array.splice(index, 1);  
-        }
+         
          
     }
 
