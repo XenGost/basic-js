@@ -18,11 +18,11 @@ function transform(array) {
     let index = 0;
     if (array.includes('--discard-next',0)){
         index = array.indexOf('--discard-next',0);
-        transform_array.splice(index+1, 1);
+        transform_array.splice(index, 2);
     }
     if (array.includes('--discard-prev',0)){
         index = array.indexOf('--discard-prev',0);
-        transform_array.splice(index-1, 1);
+        transform_array.splice(index-1, 2);
     }
     if (array.includes('--double-next',0)){
         index = array.indexOf('--double-next',0);
