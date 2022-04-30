@@ -15,7 +15,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function transform(array) {
   let transform_array =[].concat(array);
-   if (transform_array.length<2){
+   if (transform_array.length==1){
         return '\'arr\' parameter must be an instance of the Array!'
     }
     let index = 0;
