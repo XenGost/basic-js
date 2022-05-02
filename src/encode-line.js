@@ -12,7 +12,6 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function encodeLine(str) {
   let arr = str.split('');
-  arr = arr.sort();
   let result=[];
   let number =0;
   for (let i=0; i<arr.length;i++){
