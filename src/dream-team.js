@@ -20,7 +20,7 @@ function createDreamTeam(members) {
      if (Array.isArray(members) == false){
          return false;
      }
-    if (members.length < 2){
+    if (members.length < 1){
         return false;
         }
     for (let i=0; i<members.length; i++){
