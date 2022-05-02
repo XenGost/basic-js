@@ -11,7 +11,8 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function encodeLine(str) {
-  
+  let arr = str.split('');
+
   let result=[];
   let number=0;
   for (let i=0; i<arr.length;i++){
@@ -32,17 +33,10 @@ function encodeLine(str) {
             break;
         }
     }
-   /* if (number == 1){
-        result[i]= arr[i];
-    }
-    else{
-        result[i]=number + arr[i];
-    }*/
+   
     number = 0;
   }
-  let strres = new Set(result);
-  
- // return Array.from(strres).join('')
+
  return result.join('');
 }
 
