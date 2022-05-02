@@ -29,6 +29,9 @@ function repeater(/* str, options */) {
     if (options.additionRepeatTimes === undefined) {
         options.additionRepeatTimes = 1;
     }
+    if (options.addition === undefined) {
+        options.addition = '';
+    }
     for(let i=0;i<options.repeatTimes;i++){
         
         result=result + str;
