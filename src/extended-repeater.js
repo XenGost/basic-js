@@ -23,6 +23,12 @@ function repeater(/* str, options */) {
     if (options.additionSeparator === undefined) {
         options.additionSeparator = '|';
     }
+    if (options.repeatTimes === undefined) {
+        options.repeatTimes = 1;
+    }
+    if (options.additionRepeatTimes === undefined) {
+        options.additionRepeatTimes = 1;
+    }
     for(let i=0;i<options.repeatTimes;i++){
         
         result=result + str;
