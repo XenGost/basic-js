@@ -14,11 +14,19 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(members) {
-  let nameteam = [];
+    let nameteam = [];
     let name;
+    console.log(typeof members);
+     if (typeof members != "object"){
+         return false;
+     }
+    if (members.length < 2){
+        return false;
+        }
     for (let i=0; i<members.length; i++){
         if (typeof members[i] === "string"){
         name = members[i];
+        name = name.replace(/\s+/g, '');
         nameteam[i]=name[0];
         }
         else{
@@ -33,7 +41,8 @@ function createDreamTeam(members) {
         }
     }
    nameteam.sort();
-   let team = nameteam.join('')
+   let team = nameteam.join('').toUpperCase();
+  
     
   return team;
 }
