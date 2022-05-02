@@ -37,8 +37,7 @@ if(typeof date.getMonth != 'function'){
   case 09:
   case 10:
       return "autumn"
-  default:
-      return 'Unable to determine the time of year!'
+
 }
 }
 
