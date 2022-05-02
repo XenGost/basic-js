@@ -16,8 +16,8 @@ const { NotImplementedError } = require('../extensions/index.js');
 function createDreamTeam(members) {
     let nameteam = [];
     let name;
-    console.log(typeof members);
-     if (typeof members != "object"){
+
+     if (Array.isArray(members) == false){
          return false;
      }
     if (members.length < 2){
