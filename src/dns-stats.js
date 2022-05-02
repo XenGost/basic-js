@@ -25,26 +25,37 @@ const { NotImplementedError } = require('../extensions/index.js');
 function getDNSStats(domains) {
 let result = {};
 let index=0;
-let saveIndex=0;;
+let saveIndex=0;
 let str = [];
 let strDomain ='';
-let j =0;
+let j =1;
+str[0]='';
+
 for(let i=0;i<domains.length; i++){
     strDomain = domains[i];
+    saveIndex=strDomain.length;
     while (index != -1){
-        index = strDomain.indexOf('.', saveIndex);
+        index = strDomain.lastIndexOf('.', saveIndex);
         if (index != -1){
-            str[j]=strDomain.slice(saveIndex, index);
+            str[j]=str[j-1] + strDomain.slice(index, saveIndex+1);
             j++;
-            saveIndex = index+1;
+            saveIndex = index-1;
         }
         if (index == -1){
-             str[j]=strDomain.slice(saveIndex);
+             str[j]=str[j-1] +'.'+ strDomain.slice(0, saveIndex+1) ;
             j++;
         }
     }
+    str[j]='';
+    j++;
     index=0;
     saveIndex=0;
+}
+for(let i=0;i<str.length; i++){
+    if (str[i]==''){
+        str.splice(i,1)
+    }
+    
 }
 let number =0;
 for(let i=0;i<str.length; i++){
@@ -57,7 +68,7 @@ for(let i=0;i<str.length; i++){
     result[str[i]]=number;
     number = 0;
 }
-console.log(str);
+
 return result;
 }
 
