@@ -23,9 +23,82 @@ const { NotImplementedError } = require('../extensions/index.js');
  *  [1, 1, 1]
  * ]
  */
-function minesweeper(/* matrix */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function minesweeper(matrix) {
+ let result = JSON.parse(JSON.stringify(matrix));
+    for (let i=0; i<result.length; i++){
+        for (let j=0; j<result[i].length; j++){
+            result[i][j]=0;
+        }
+    }
+    console.log(matrix)
+    console.log(result)
+    for (let i=1; i<result.length-1; i++){
+        for (let j=0; j<result[i].length; j++){
+            if(matrix[i][j+1]==true){
+            result[i][j]+=1;
+            }
+            if(matrix[i][j-1]==true){
+            result[i][j]+=1;
+            }
+            if(matrix[i+1][j]==true){
+            result[i][j]+=1;
+            }
+            if(matrix[i-1][j]==true){
+            result[i][j]+=1;
+            }
+            
+            if(matrix[i-1][j+1]==true){
+            result[i][j]+=1;
+            }
+            if(matrix[i+1][j+1]==true){
+            result[i][j]+=1;
+            }
+            if(matrix[i+1][j-1]==true){
+            result[i][j]+=1;
+            }
+            if(matrix[i-1][j-1]==true){
+            result[i][j]+=1;
+            }
+        }
+    }
+    console.log(result)
+     for (let j=0; j<result[0].length; j++){
+            if(matrix[0][j+1]==true){
+            result[0][j]+=1;
+            }
+            if(matrix[0][j-1]==true){
+            result[0][j]+=1;
+            }
+            if(matrix[1][j]==true){
+            result[0][j]+=1;
+            }
+            if(matrix[1][j+1]==true){
+            result[0][j]+=1;
+            }
+            if(matrix[1][j-1]==true){
+            result[0][j]+=1;
+            }
+            }
+        for (let j=0; j<result[result.length-1].length; j++){
+            if(matrix[result.length-1][j+1]==true){
+            result[result.length-1][j]+=1;
+            }
+            if(matrix[result.length-1][j-1]==true){
+            result[result.length-1][j]+=1;
+            }
+            if(matrix[result.length-2][j]==true){
+            result[result.length-1][j]+=1;
+            }
+            if(matrix[result.length-2][j+1]==true){
+            result[result.length-1][j]+=1;
+            }
+            if(matrix[result.length-2][j-1]==true){
+            result[result.length-1][j]+=1;
+            }
+            }
+    
+    
+    return result;
 }
 
 module.exports = {
