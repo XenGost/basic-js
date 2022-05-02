@@ -26,7 +26,7 @@ function createDreamTeam(members) {
     for (let i=0; i<members.length; i++){
         if (typeof members[i] === "string"){
         name = members[i];
-        name = name.replace(/\s+/g, '');
+        name = name.replace(/\s+/g, '').toUpperCase();
         nameteam[i]=name[0];
         }
         else{
@@ -41,7 +41,7 @@ function createDreamTeam(members) {
         }
     }
    nameteam.sort();
-   let team = nameteam.join('').toUpperCase();
+   let team = nameteam.join('');
   
     
   return team;
